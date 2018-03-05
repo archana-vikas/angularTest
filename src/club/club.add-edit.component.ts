@@ -89,8 +89,11 @@ export class ClubAddOREditComponent implements OnInit
                     console.log('Updated Club:' + JSON.stringify(this.aClub));
                 },
                 error=>this.errorMessage=<any>error);
+                //Message after saving//
+                alert("club has been saved");
 
-        }  
+        } 
+               
     }
-    
+            
 }
