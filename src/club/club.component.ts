@@ -49,5 +49,7 @@ export class ClubComponent implements OnInit{
                     
             },
             error=>this.errorMessage=<any>error); 
+            //Alert message to confirm//
+            alert("Do you want to delete this club");
 }
 }
