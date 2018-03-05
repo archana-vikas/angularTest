@@ -1,0 +1,35 @@
+<h2>{{pageTitle}}</h2>
+
+<div>
+        <form>
+            <label for=name>Club Name: </label>
+                <input type="text" id="name" name="Club Name" [(ngModel)]="aClub.name"  />
+            <br>
+            <label>City:</label>
+                <input type="text" id="City"
+                name="City" [(ngModel)]="aClub.city"  />
+            <br>
+            <br>
+            <label>Color:</label>
+            <select name="color" [(ngModel)]="aClub.color">
+                <option *ngFor="let color of colors" value= {{color.id}}  >
+                    {{color.name}}
+                </option>
+            </select>
+            <br>
+            <label>IsTopfour:</label>
+                <input type="text" id="IsTopFour"
+                name="IsTopFour" [(ngModel)]="aClub.isTopFour"  placeholder="true/false"/>
+            <br>
+            <br>
+            <label>Next Match Date:</label>
+                <input type="text" id="NextMatchDate"
+                name="NextMatchDate" [(ngModel)]="aClub.nextMatchDate" />
+            <br>
+
+            <button (click)="saveClub()">
+                Save
+              </button>
+              <a routerLink="/clubs">Back</a>
+            </form>
+    </div>

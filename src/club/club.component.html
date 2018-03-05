@@ -1,0 +1,28 @@
+<h2>{{pageTitle}}</h2>
+
+<table>
+    <thead>
+            <tr>
+                    <th>Id</th>
+                    <th>Club Name</th>
+                    <th>City</th>
+                    <th>Color</th>
+                    <th>IsTopFour</th>
+                    <th>Next Match Date</th>
+            </tr>
+
+    </thead>
+    <tbody>
+            <tr *ngFor='let club of clubs'>
+                    <td *ngIf='club'>{{club.id}}</td>
+                    <td *ngIf='club'>{{club.name}}</td>
+                    <td *ngIf='club'>{{club.city}}</td>
+                    <td *ngIf='club'>{{club.color}}</td>
+                    <td *ngIf='club'>{{club.isTopFour}}</td>
+                    <td *ngIf='club'>{{club.nextMatchDate}}</td>
+                    <button type="Edit" value="Edit" (click)="editClub(club)">Edit</button>
+                    <button type="Submit" value="Delete" (click)="deleteClub(club)">Delete</button>
+            </tr>
+    </tbody>       
+ </table>
+ <a routerLink="Add">Add Club</a>
