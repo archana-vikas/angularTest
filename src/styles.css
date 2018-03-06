@@ -60,6 +60,16 @@ h1 {
     color: #039be5;
   }
   
+  .clubFields label, .clubFields input .clubFields select {
+    display:inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .clubFields label {
+    width:200px; 
+  }
+
   /* everywhere else */
   * {
     font-family: Arial, Helvetica, sans-serif;

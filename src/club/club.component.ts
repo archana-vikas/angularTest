@@ -12,11 +12,12 @@ import { Router } from '@angular/router';
 })
 export class ClubComponent implements OnInit{
     pageTitle:string="List of Clubs";
+    colors:Color[];
     clubs:Club[]=[];
     result:boolean;
     errorMessage:string;
 
-    constructor(private _localStorageService:LocalStorageService, private router:Router)
+    constructor(private _localStorageService:LocalStorageService,private _clubService:ClubsService, private router:Router)
     {
 
     }
@@ -26,7 +27,12 @@ export class ClubComponent implements OnInit{
         .subscribe(dataFromSubscription=>
                 {this.clubs=dataFromSubscription;},
             error=>this.errorMessage=error);
-
+        //Get all colors
+        this._clubService.getColors()
+            .subscribe(
+                colorsData=>this.colors=colorsData,
+                error=>this.errorMessage=error
+            );
     }
     //Edit Club
     editClub(clubToEdit: Club):void{
