@@ -41,11 +41,17 @@
                     <td *ngIf='club'>{{club.id}}</td>
                     <td *ngIf='club'>{{club.name}}</td>
                     <td *ngIf='club'>{{club.city}}</td>
-                    <td *ngIf='club'>{{club.color}}</td>
+                    <td *ngIf='club'>
+                    <select name="color" [(ngModel)]="club.color" disabled >
+                            <option *ngFor="let color of colors" value= {{color.id}}  >
+                                {{color.id}} - {{color.name}}
+                            </option>
+                        </select>                    
+                    </td>
                     <td *ngIf='club'>{{club.isTopFour}}</td>
                     <td *ngIf='club'>{{club.nextMatchDate}}</td>
-                    <button type="Edit" value="Edit" (click)="editClub(club)">Edit</button>
-                    <button type="Submit" value="Delete" (click)="deleteClub(club)">Delete</button>
+                    <button type="Button" value="Edit" (click)="editClub(club)">Edit</button>
+                    <button type="Button" value="Delete" (click)="deleteClub(club)">Delete</button>
             </tr>
     </tbody>       
 

@@ -35,7 +35,6 @@ export class ClubAddOREditComponent implements OnInit
                 console.log('Creating new Club');
                 this.pageTitle="Add new club";
                 this.aClub={id:null, name:null, city:null,color:null,isTopFour:null,nextMatchDate:null};
-
             } 
             else{
                 //Get the club object to edit
@@ -78,6 +77,7 @@ export class ClubAddOREditComponent implements OnInit
                 .subscribe(newClub=>{
                     this.aClub=newClub;
                     console.log('Added club:' + JSON.stringify(this.aClub));
+                    alert("Club has been saved. New Club Id:"+this.aClub.id);
                 },
                 error=>this.errorMessage=<any>error);
         }
@@ -87,11 +87,10 @@ export class ClubAddOREditComponent implements OnInit
                 .subscribe(newClub=>{
                     this.aClub=newClub;
                     console.log('Updated Club:' + JSON.stringify(this.aClub));
+                    alert("Club has been saved.");
                 },
                 error=>this.errorMessage=<any>error);
                 //Message after saving//
-                alert("club has been saved");
-
         } 
                
     }
